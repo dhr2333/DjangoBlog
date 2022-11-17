@@ -1,8 +1,8 @@
 <footer id="colophon" role="contentinfo">
     <div class="site-info" style="text-align: center">
-        Copyright&copy;&nbsp;{{ CURRENT_YEAR }}&nbsp;
+        Copyright &copy;&nbsp;{{ CURRENT_YEAR }}&nbsp;
         <a href="/" target="blank">{{ SITE_NAME }}</a>
-        &nbsp;|&nbsp;
+        {% comment %} &nbsp;|&nbsp;
 
         <a href="/sitemap.xml" title="SiteMap" target="_blank">
             SiteMap
@@ -20,7 +20,7 @@
 
         |&nbsp;
         <a href="https://tongji.baidu.com/sc-web/3478620/home/ico?siteId=11261596" target="_blank"
-           rel="nofollow">百度统计</a>
+           rel="nofollow">百度统计</a> {% endcomment %}
         {% comment %}{% include 'share_layout/analyticscode.html' %}{% endcomment %}
 
     </div>
@@ -30,8 +30,8 @@
         &nbsp;|&nbsp;
         <a href="https://github.com/liangliangyy/DjangoBlog" rel="nofollow" target="blank">liangliangyy</a>
         |
-        <a href="https://www.lylinux.net" target="blank">lylinux</a>
-        |
+        {% comment %} <a href="https://www.lylinux.net" target="blank">lylinux</a>
+        | {% endcomment %}
         本页面加载耗时:<!!LOAD_TIMES!!>s
     </div>
     {% if BEIAN_CODE %}
@@ -46,9 +46,9 @@
             {% endif %}
         </div>
     {% endif %}
-    {% if ANALYTICS_CODE %}
+    {% comment %} {% if ANALYTICS_CODE %}
         {{ ANALYTICS_CODE| safe }}
-    {% endif %}
+    {% endif %} {% endcomment %}
 </footer><!-- #colophon -->
 
 
