@@ -1,4 +1,4 @@
-FROM python:3
+FROM harbor.wlhiot.com:8080/library/python:3
 ENV PYTHONUNBUFFERED 1
 WORKDIR /code/djangoblog/
 RUN  apt-get install  default-libmysqlclient-dev -y && \
