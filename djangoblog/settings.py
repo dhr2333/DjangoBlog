@@ -104,11 +104,14 @@ WSGI_APPLICATION = 'djangoblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djangoblog',
-        'USER': 'root',
-        'PASSWORD': 'x4@JM!Kv5zzPomeQ',
-        'HOST': '36.133.91.78',
-        'PORT': '3306',
+        'NAME': os.environ.get('DJANGO_MYSQL_DATABASE') or 'djangoblog',
+        'USER': os.environ.get('DJANGO_MYSQL_USER') or 'root',
+        'PASSWORD': os.environ.get('DJANGO_MYSQL_PASSWORD') or 'x4@JM!Kv5zzPomeQ',
+        'HOST': os.environ.get('DJANGO_MYSQL_HOST') or '36.133.91.78',
+        'PORT': int(
+            os.environ.get('DJANGO_MYSQL_PORT') or 3306),
+        'OPTIONS': {
+            'charset': 'utf8mb4'},
     }
 }
 
@@ -209,14 +212,14 @@ EMAIL_USE_SSL = env_to_bool('DJANGO_EMAIL_SSL', True)
 EMAIL_HOST = os.environ.get('DJANGO_EMAIL_HOST') or 'smtp.163.com'
 EMAIL_PORT = int(os.environ.get('DJANGO_EMAIL_PORT') or 465)
 # EMAIL_HOST_USER = os.environ.get('DJANGO_EMAIL_USER')
-EMAIL_HOST_USER = 'Dai_Haorui@163.com'
+EMAIL_HOST_USER = os.environ.get('DJANGO_EMAIL_USER') or 'Dai_Haorui@163.com'
 # EMAIL_HOST_PASSWORD = os.environ.get('DJANGO_EMAIL_PASSWORD')
-EMAIL_HOST_PASSWORD = 'CSEHYLLZOGAVXDYO'
+EMAIL_HOST_PASSWORD = os.environ.get('DJANGO_EMAIL_PASSWORD') or 'CSEHYLLZOGAVXDYO'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
 # Setting debug=false did NOT handle except email notifications
-# ADMINS = [('admin', os.environ.get('DJANGO_ADMIN_EMAIL') or 'admin@admin.com')]
-ADMINS = [('daihaorui', 'Dai_Haorui@163.com')]
+ADMINS = [('admin', os.environ.get('DJANGO_ADMIN_EMAIL') or 'Dai_Haorui@163.com')]
+# ADMINS = [('daihaorui', 'Dai_Haorui@163.com')]
 # WX ADMIN password(Two times md5)
 WXADMIN = os.environ.get(
     'DJANGO_WXADMIN_PASSWORD') or '995F03AC401D6CABABAEF756FC4D43C7'
