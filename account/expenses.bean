@@ -1,0 +1,76 @@
+; 家庭
+2022-01-01 open Expenses:Home:Phone CNY ; 话费
+2022-01-01 open Expenses:Home:Rent CNY ; 房租
+2022-01-01 open Expenses:Home:Utilities CNY ; 水电燃气
+2022-01-01 open Expenses:Home:Property CNY ; 物业
+2022-01-01 open Expenses:Home:Other CNY ; 其他
+
+; 人情
+2022-01-01 open Expenses:Relationship:Gift CNY ; 礼物
+2022-01-01 open Expenses:Relationship:Relative CNY ; 礼金
+2022-01-01 open Expenses:Relationship:Other CNY ; 其他
+
+; 购物
+2022-01-01 open Expenses:Shopping:Clothing CNY ; 服饰鞋包
+2022-01-01 open Expenses:Shopping:Digital CNY ; 电子数码
+2022-01-01 open Expenses:Shopping:Home CNY ; 家居百货
+2022-01-01 open Expenses:Shopping:Makeup CNY ; 化妆护肤,剪头发
+2022-01-01 open Expenses:Shopping:Jewel CNY ; 珠宝首饰
+2022-01-01 open Expenses:Shopping:Other CNY ; 其他
+
+; 餐饮
+2022-01-01 open Expenses:Food:Breakfast CNY
+2022-01-01 open Expenses:Food:Lunch CNY
+2022-01-01 open Expenses:Food:Dinner CNY
+2022-01-01 open Expenses:Food:DrinkFruit CNY ; 饮料水果
+2022-01-01 open Expenses:Food:Invite CNY ; 请客吃饭
+2022-01-01 open Expenses:Food:Other CNY ; 零食及其他
+
+; 医疗健康
+2022-01-01 open Expenses:Health:Outpatient CNY ; 门诊
+2022-01-01 open Expenses:Health:Medical CNY ; 药品
+2022-01-01 open Expenses:Health:Examination CNY ; 体检
+2022-01-01 open Expenses:Health:Other CNY ; 其他
+
+; 交通
+2022-01-01 open Expenses:TransPort:Public:Airline CNY ; 飞机
+2022-01-01 open Expenses:TransPort:Public:Railway CNY ; 火车
+2022-01-01 open Expenses:TransPort:Public:Taxi CNY ; 打车
+2022-01-01 open Expenses:TransPort:Public:Public CNY ; 公交、地铁等公共交通
+2022-01-01 open Expenses:TransPort:Private:Car CNY ;私家车
+2022-01-01 open Expenses:TransPort:Private:Oil CNY ; 油费
+2022-01-01 open Expenses:TransPort:Private:Park CNY ; 停车费
+2022-01-01 open Expenses:TransPort:Private:Maintenance CNY ; 保养维修
+2022-01-01 open Expenses:TransPort:Private:Insurance CNY ; 车险
+2022-01-01 open Expenses:TransPort:Private:Other CNY ; 其他
+
+; 娱乐
+2022-01-01 open Expenses:Entertainment:Hotel CNY ; 酒店住宿
+2022-01-01 open Expenses:Entertainment:Subscription CNY ; 订阅服务(网易云音乐、华为、有道云笔记)
+2022-01-01 open Expenses:Entertainment:Show CNY ; 演出门票,电影等
+2022-01-01 open Expenses:Entertainment:Game ; 游戏花销
+2022-01-01 open Expenses:Entertainment:Other CNY ; 其他
+
+; 政府
+2022-01-01 open Expenses:Government:Insurance ; 五险
+2022-01-01 open Expenses:Government:Provident ; 公积金
+2022-01-01 open Expenses:Government:IncomeTax ; 个人所得税
+
+; 投资
+2022-01-01 open Expenses:Invest:Basic CNY ; 基础设施
+; 2022-01-01 open Expenses:Invest:Study CNY ; 学习
+2022-01-01 open Expenses:Invest:Cost CNY ; 手续费
+2022-01-01 open Expenses:Invest:Other CNY ; 其他
+
+; 折旧
+; 2022-01-01 open Expenses:Depreciation:CarUsage
+; 2022-01-01 open Expenses:Depreciation:HouseUsage
+
+; 其他
+2022-01-01 open Expenses:Other:Pledge ; 押金
+
+2022-08-16 * "负债初始化"
+    Liabilities:CreditCard:Bank:ZhongXin:C6428 -20,469.49 CNY
+    Liabilities:CreditCard:Bank:Huaxia:C5636  -57.57 CNY
+    Liabilities:Payables:Organization:SiKo          -2999.00 CNY
+    Equity:OpenBalance 

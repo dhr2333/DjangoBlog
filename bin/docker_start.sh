@@ -32,3 +32,5 @@ exec gunicorn ${DJANGO_WSGI_MODULE}:application \
 --log-file=- \
 --worker-class gevent \
 --threads 4
+
+fava
