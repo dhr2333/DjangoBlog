@@ -1,16 +1,12 @@
 FROM python:alpine as builder 
-
 RUN apk add --update libxml2-dev libxslt-dev gcc musl-dev g++
 RUN pip install --prefix="/install" fava 
 
-FROM python:alpine
-
+FROM harbor.wlhiot.com:8080/library/python:3
 COPY --from=builder /install /usr/local
-
 ENV FAVA_HOST "0.0.0.0"
 EXPOSE 5000
 
-FROM harbor.wlhiot.com:8080/library/python:3
 ENV PYTHONUNBUFFERED 1
 WORKDIR /code/djangoblog/
 RUN  apt-get install  default-libmysqlclient-dev -y && \

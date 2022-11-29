@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 NAME="djangoblog" # Name of the application
+APP_NAME01="djangoblog"
+APP_NAME02="beancount"
 DJANGODIR=/code/djangoblog # Django project directory
 USER=root # the user to run as
 GROUP=root # the group to run as
@@ -8,12 +10,14 @@ NUM_WORKERS=1 # how many worker processes should Gunicorn spawn
 DJANGO_WSGI_MODULE=djangoblog.wsgi # WSGI module name
 
 
-echo "Starting $NAME as `whoami`"
+echo "Starting $APP_NAME01 as `whoami`"
+echo "Starting $APP_NAME02 as `whoami`"
 
 # Activate the virtual environment
 cd $DJANGODIR
 
 export PYTHONPATH=$DJANGODIR:$PYTHONPATH
+fava &
 #pip install -Ur requirements.txt -i http://pypi.douban.com/simple/  --trusted-host pypi.douban.com && \
 #        pip install gunicorn  -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
 python manage.py makemigrations && \
@@ -32,5 +36,3 @@ exec gunicorn ${DJANGO_WSGI_MODULE}:application \
 --log-file=- \
 --worker-class gevent \
 --threads 4
-
-fava
