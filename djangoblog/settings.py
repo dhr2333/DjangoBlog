@@ -196,14 +196,11 @@ if os.environ.get("DJANGO_REDIS_URL"):
     CACHES = {
         'default': {
             'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-            'LOCATION': f'redis://{os.environ.get("DJANGO_REDIS_URL")}' or f'redis//127.0.0.1:36379',
-
-            "OPTIONS": {
-                "CLIENT_CLASS": "django_redis.client.DefaultClient",
-                "CONNECTION_POOL_KWARGS": {"decode_responses": True, "max_connections": 10}, # 自动解码, 设置最大连接池为10
-                "PASSWORD": "root",
-                }
-        }
+            'LOCATION': f'redis://{os.environ.get("DJANGO_REDIS_URL")}/0' or f'redis//127.0.0.1:36379/0',
+            'OPTIONS': {
+                'password': os.environ.get("DJANGO_REDIS_PASSWORD"),
+                },
+        },
     }
 SITE_ID = 1
 BAIDU_NOTIFY_URL = os.environ.get('DJANGO_BAIDU_NOTIFY_URL') \
