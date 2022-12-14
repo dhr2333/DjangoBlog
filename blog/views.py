@@ -312,7 +312,7 @@ def fileupload(request):
                 timestr=timestr)
             if settings.TESTING:
                 basepath = settings.BASE_DIR + '/uploads'
-            url = 'https://resource.lylinux.net/{type}/{timestr}/{filename}'.format(
+            url = 'https://www.dhr2333.cn/{type}/{timestr}/{filename}'.format(
                 type='files' if not isimage else 'image', timestr=timestr, filename=filename)
             if not os.path.exists(basepath):
                 os.makedirs(basepath)
