@@ -207,12 +207,12 @@ class RequireEmailView(FormView):
                           str(oauthuser.id) + settings.SECRET_KEY)
         site = get_current_site().domain
         if settings.DEBUG:
-            site = '127.0.0.1:8000'
+            site = 'www.dhr2333.cn'
         path = reverse('oauth:email_confirm', kwargs={
             'id': oauthid,
             'sign': sign
         })
-        url = "http://{site}{path}".format(site=site, path=path)
+        url = "https://{site}{path}".format(site=site, path=path)
 
         content = """
                 <p>请点击下面链接绑定您的邮箱</p>
