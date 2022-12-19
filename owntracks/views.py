@@ -76,7 +76,7 @@ def convert_to_amap(locations):
         datas = ';'.join(
             set(map(lambda x: str(x.lon) + ',' + str(x.lat), item)))
 
-        key = '8440a376dfc9743d8924bf0ad141f28e'
+        key = '32a66f1ee17a53c6847e8d928d7652f5'
         api = 'http://restapi.amap.com/v3/assistant/coordinate/convert'
         query = {
             'key': key,
