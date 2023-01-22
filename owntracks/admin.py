@@ -4,4 +4,4 @@ from django.contrib import admin
 
 
 class OwnTrackLogsAdmin(admin.ModelAdmin):
-    pass
+    ordering=('-tid',)
